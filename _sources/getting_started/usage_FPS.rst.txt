@@ -1,0 +1,50 @@
+Usage of FPS
+================
+
+How to run?
+------------------
+
+Activate fencis virtual environment before use it:
+
+.. code:: bash
+
+  conda activate fenics
+
+Change to the path where the code file (example_DCPD.py) is placed
+
+.. code:: bash
+
+  cd /desired/path # for linux/Mac
+  cd /mnt/c/foldername  # for WSL, here c is the disk name, like C:\
+
+Note: here, the example_DCPD.py should be in a same path with files of kinetics_library.py, postProcess_FP.py, and postProcess_FP.py.
+
+The code details of the DCPD example and a COD example are shown in `example_DCPD.py`_ and `example_COD.py`_
+
+
+Run the python file
+
+.. code:: bash
+
+    python example_DCPD.py  # run the DCPD example 
+
+After finished, one simulation report file  './out/Report_DCPD.html' (`example report  <../_static/Report_DCPD.html>`_) is generated automatically and please open it using the browser.
+
+.. _example_DCPD.py:
+
+example_DCPD.py 
+------------------
+.. literalinclude:: ../../FPS/example_DCPD.py
+   :language: python
+
+.. _example_COD.py:
+
+example_COD.py 
+------------------
+.. literalinclude:: ../../FPS/example_COD.py
+   :language: python
+
+.. Report example 
+.. ------------------
+
+.. .. include:: ./Report_DCPD.html

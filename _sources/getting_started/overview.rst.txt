@@ -1,0 +1,7 @@
+Overview
+================
+
+This Frontal Polymerization Solver (1D) is developed based on `FENICS`_ which is a popular open-source computing platform for solving partial differential equations (PDEs)
+
+.. _`FENICS` : https://fenicsproject.org/
+
