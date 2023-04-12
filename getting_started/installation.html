@@ -45,7 +45,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installing-wsl-for-windows-user">2.1. Installing WSL for Windows user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-wsl-for-windows-users">2.1. Installing WSL for Windows users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-conda">2.2. Install conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-fenics">2.3. Install Fenics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-other-dependencies">2.4. Install other dependencies</a></li>
@@ -83,23 +83,23 @@
              
   <section id="installation">
 <h1><span class="section-number">2. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
-<p>This solver is developed based on FENICS, which is run on Linux-based platform.</p>
-<section id="installing-wsl-for-windows-user">
-<h2><span class="section-number">2.1. </span>Installing WSL for Windows user<a class="headerlink" href="#installing-wsl-for-windows-user" title="Permalink to this headline"></a></h2>
-<p>This section is for Windows user only. For linux or Mas OS user, please skip this section.</p>
-<p>For Windows users, the <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a> (Windows Subsystem for Linux) may be needed.</p>
-<p>To install WSL, open PowerShell or Windows Command Prompt in administrator mode by right-clicking and selecting “Run as administrator”, enter the wsl –install command, then restart your machine.</p>
+<p>This solver is developed based on FENICS, which is run on Linux-based platform. It can, however, also be run on Windows systems.</p>
+<section id="installing-wsl-for-windows-users">
+<h2><span class="section-number">2.1. </span>Installing WSL for Windows users<a class="headerlink" href="#installing-wsl-for-windows-users" title="Permalink to this headline"></a></h2>
+<p>This section is for Windows users only. For linux or Mac OS users, please skip this section.</p>
+<p>For Windows users, <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a> (Windows Subsystem for Linux) will be needed.</p>
+<p>To install WSL, open PowerShell or Windows Command Prompt in administrator mode by searching in the Start menu, right-clicking it and selecting “Run as administrator”. Enter the command</p>
 <div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="n">wsl</span> <span class="p">-</span><span class="n">-install</span>
 </pre></div>
 </div>
-<p>For more details of WSL’s intallations, please refer to <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">https://learn.microsoft.com/en-us/windows/wsl/install</a></p>
-<p>After the WSL is installed, open a linux terminal shell by going to ‘start’ and running ‘Ubuntu’, from which a unix account name and password should be set first (The password can be empty).</p>
+<p>and then restart your machine. For more details of WSL’s intallations, please refer to <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">https://learn.microsoft.com/en-us/windows/wsl/install</a></p>
+<p>After WSL is installed, open a linux terminal shell by going to the Start menu and running ‘Ubuntu’, from which a unix account name and password should be set first (The password can be empty).</p>
 <p>Then please follow below sections to install FENICS</p>
 </section>
 <section id="install-conda">
 <h2><span class="section-number">2.2. </span>Install conda<a class="headerlink" href="#install-conda" title="Permalink to this headline"></a></h2>
 <p>We recommand using conda to install fenics.</p>
-<p>Check conda is installed or not on your machine. Open a terminal shell and input:</p>
+<p>Check whether conda is already installed on your machine. Open a terminal shell and input:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which conda
 </pre></div>
 </div>
@@ -134,7 +134,7 @@ bash Mambaforge-MacOSX-arm64.sh -b -p ~/mambaforge3
 <span class="nb">exit</span>
 </pre></div>
 </div>
-<p>and then restart a terminal and check conda is installed to use or not:</p>
+<p>and then restart a terminal and check if conda is installed to use or not:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which conda
 </pre></div>
 </div>
@@ -150,18 +150,18 @@ conda activate fenics
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda search fenics --channel conda-forge
 </pre></div>
 </div>
-<p>Install FENICS. In 2018, work started on FEniCSx: the new version of the FEniCS library. However, our FP solver is developed based on old version of FEniCS, whose installation should follow the below command:</p>
+<p>Install FENICS. In 2018, work started on FEniCSx: the new version of the FEniCS library. However, our FP solver is developed in the old version of FEniCS, whose installation uses the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge fenics <span class="nv">mshr</span><span class="o">=</span><span class="m">2019</span>.1.0<span class="o">=</span>py38h255090a_2 fenics-dijitso fenics-dolfin fenics-ffc fenics-fiat fenics-libdolfin fenics-ufl
 </pre></div>
 </div>
 </section>
 <section id="install-other-dependencies">
 <h2><span class="section-number">2.4. </span>Install other dependencies<a class="headerlink" href="#install-other-dependencies" title="Permalink to this headline"></a></h2>
-<p>Activate fencis virtual environment:</p>
+<p>Activate the fenics virtual environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate fenics
 </pre></div>
 </div>
-<p>Check ffmpeg (for post-processing) is installed:</p>
+<p>Check whether ffmpeg is installed (used for post-processing):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which ffmpeg
 </pre></div>
 </div>

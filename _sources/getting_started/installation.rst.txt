@@ -1,23 +1,23 @@
 Installation
 ==========================
 
-This solver is developed based on FENICS, which is run on Linux-based platform. 
+This solver is developed based on FENICS, which is run on Linux-based platform. It can, however, also be run on Windows systems.
 
-Installing WSL for Windows user
+Installing WSL for Windows users
 ---------------------------------
-This section is for Windows user only. For linux or Mas OS user, please skip this section.
+This section is for Windows users only. For linux or Mac OS users, please skip this section.
 
-For Windows users, the `WSL`_ (Windows Subsystem for Linux) may be needed. 
+For Windows users, `WSL`_ (Windows Subsystem for Linux) will be needed. 
 
-To install WSL, open PowerShell or Windows Command Prompt in administrator mode by right-clicking and selecting "Run as administrator", enter the wsl --install command, then restart your machine. 
+To install WSL, open PowerShell or Windows Command Prompt in administrator mode by searching in the Start menu, right-clicking it and selecting "Run as administrator". Enter the command 
 
 .. code:: PowerShell
 
   wsl --install
 
-For more details of WSL's intallations, please refer to https://learn.microsoft.com/en-us/windows/wsl/install
+and then restart your machine. For more details of WSL's intallations, please refer to https://learn.microsoft.com/en-us/windows/wsl/install
 
-After the WSL is installed, open a linux terminal shell by going to 'start' and running 'Ubuntu', from which a unix account name and password should be set first (The password can be empty).
+After WSL is installed, open a linux terminal shell by going to the Start menu and running 'Ubuntu', from which a unix account name and password should be set first (The password can be empty).
 
 Then please follow below sections to install FENICS
 
@@ -27,7 +27,7 @@ Install conda
 ---------------------------------
 We recommand using conda to install fenics.
 
-Check conda is installed or not on your machine. Open a terminal shell and input:
+Check whether conda is already installed on your machine. Open a terminal shell and input:
 
 .. code:: bash
 
@@ -69,7 +69,7 @@ Now that we can execute mamba, initialize it and then exit the terminal:
   mamba init
   exit
 
-and then restart a terminal and check conda is installed to use or not:
+and then restart a terminal and check if conda is installed to use or not:
 
 .. code:: bash
 
@@ -91,7 +91,7 @@ List all of the versions of fenics available on your platform with conda:
 
   conda search fenics --channel conda-forge
 
-Install FENICS. In 2018, work started on FEniCSx: the new version of the FEniCS library. However, our FP solver is developed based on old version of FEniCS, whose installation should follow the below command:
+Install FENICS. In 2018, work started on FEniCSx: the new version of the FEniCS library. However, our FP solver is developed in the old version of FEniCS, whose installation uses the following command:
 
 .. code:: bash
 
@@ -100,13 +100,13 @@ Install FENICS. In 2018, work started on FEniCSx: the new version of the FEniCS 
 Install other dependencies
 ---------------------------------
 
-Activate fencis virtual environment:
+Activate the fenics virtual environment:
 
 .. code:: bash
 
   conda activate fenics
 
-Check ffmpeg (for post-processing) is installed:
+Check whether ffmpeg is installed (used for post-processing):
 
 .. code:: bash
 
