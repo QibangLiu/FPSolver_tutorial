@@ -91,7 +91,7 @@
 <span class="nb">cd</span> /mnt/c/foldername  <span class="c1"># for WSL, here c is the disk name, like C:\</span>
 </pre></div>
 </div>
-<p>Note: You should ensure example_DCPD.py is in the same folder as the files solver_FP.py, kinetics_library.py, and postProcess_FP.py.</p>
+<p>Note: You should ensure the python file to be run is in the same folder as the files solver_FP.py, kinetics_library.py, and postProcess_FP.py.</p>
 <p>Run the script ‘test_FP.py’_ from the command line with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python test_FP.py  <span class="c1"># run the DCPD example</span>
 </pre></div>
@@ -168,11 +168,10 @@
     <span class="n">t_end</span><span class="p">,</span> <span class="n">outputFreq_t</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">outputFreq_x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># %%</span>
-<span class="c1"># Post-process - compute the front speed, and save an animation of the temperature and alpha fronts</span>
-<span class="c1"># generate report</span>
-<span class="n">save_dir</span> <span class="o">=</span> <span class="s2">&quot;out_DCPD&quot;</span>
-<span class="n">post_pro</span> <span class="o">=</span> <span class="n">Post_process</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">,</span> <span class="n">T_data</span><span class="p">,</span> <span class="n">alpha_data</span><span class="p">,</span> <span class="n">solver</span><span class="p">,</span> <span class="n">pts</span><span class="o">=</span><span class="p">[</span>
-                        <span class="mf">2e-3</span><span class="p">,</span> <span class="mf">5e-3</span><span class="p">],</span> <span class="n">save_dir</span><span class="o">=</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">save_suffix</span><span class="o">=</span><span class="s2">&quot;DCPD&quot;</span><span class="p">,</span> <span class="n">anim_frames</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">fid</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Post-process - generate report, compute the front speed, and save an animation of the temperature and alpha fronts</span>
+<span class="n">save_dir</span> <span class="o">=</span> <span class="s2">&quot;out_DCPD&quot;</span> <span class="c1"># path to save the result files.</span>
+<span class="n">pts_</span><span class="o">=</span><span class="p">[</span><span class="mf">2e-3</span><span class="p">,</span> <span class="mf">5e-3</span><span class="p">]</span> <span class="c1"># Get evolution of alpha and T at this points</span>
+<span class="n">post_pro</span> <span class="o">=</span> <span class="n">Post_process</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">,</span> <span class="n">T_data</span><span class="p">,</span> <span class="n">alpha_data</span><span class="p">,</span> <span class="n">solver</span><span class="p">,</span> <span class="n">pts</span><span class="o">=</span><span class="n">pts_</span><span class="p">,</span> <span class="n">save_dir</span><span class="o">=</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">save_suffix</span><span class="o">=</span><span class="s2">&quot;DCPD&quot;</span><span class="p">,</span> <span class="n">anim_frames</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">fid</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">post_pro</span><span class="o">.</span><span class="n">generateReport</span><span class="p">()</span>
 
 
@@ -248,9 +247,8 @@
 <span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">,</span> <span class="n">T_data</span><span class="p">,</span> <span class="n">alpha_data</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span>
     <span class="n">t_end</span><span class="p">,</span> <span class="n">outputFreq_t</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">outputFreq_x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># Post-process - compute the front speed, and save an animation of the temperature and alpha fronts</span>
-<span class="c1"># generate the report</span>
-<span class="n">save_dir</span> <span class="o">=</span> <span class="s2">&quot;out_COD&quot;</span>
+<span class="c1"># Post-process - generate the report, compute the front speed, and save an animation of the temperature and alpha fronts</span>
+<span class="n">save_dir</span> <span class="o">=</span> <span class="s2">&quot;out_COD&quot;</span> <span class="c1"># path to save results.</span>
 <span class="n">post_pro</span> <span class="o">=</span> <span class="n">Post_process</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">,</span> <span class="n">T_data</span><span class="p">,</span> <span class="n">alpha_data</span><span class="p">,</span> <span class="n">solver</span><span class="p">,</span><span class="n">pts</span><span class="o">=</span><span class="p">[],</span>
                         <span class="n">save_dir</span><span class="o">=</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">save_suffix</span><span class="o">=</span><span class="s2">&quot;COD&quot;</span><span class="p">,</span> <span class="n">anim_frames</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">fid</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">post_pro</span><span class="o">.</span><span class="n">generateReport</span><span class="p">()</span>

@@ -17,7 +17,7 @@ Change to the path where the code files (example_DCPD.py, etc.) are placed
   cd /desired/path # for linux/Mac
   cd /mnt/c/foldername  # for WSL, here c is the disk name, like C:\
 
-Note: You should ensure example_DCPD.py is in the same folder as the files solver_FP.py, kinetics_library.py, and postProcess_FP.py.
+Note: You should ensure the python file to be run is in the same folder as the files solver_FP.py, kinetics_library.py, and postProcess_FP.py.
 
 Run the script 'test_FP.py'_ from the command line with:
 

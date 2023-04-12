@@ -80,7 +80,7 @@
              
   <section id="fp-solver">
 <h1><span class="section-number">4. </span>FP Solver<a class="headerlink" href="#fp-solver" title="Permalink to this headline"></a></h1>
-<p>This section provides details of classes and functions of this solver.</p>
+<p>This section provides details of classes and functions of this FP solver.</p>
 <section id="module-solver_FP">
 <span id="main-solver"></span><h2><span class="section-number">4.1. </span>Main solver<a class="headerlink" href="#module-solver_FP" title="Permalink to this headline"></a></h2>
 <dl class="py class">
@@ -187,7 +187,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 </section>
 <section id="cure-kinetics">
 <h2><span class="section-number">4.2. </span>Cure kinetics<a class="headerlink" href="#cure-kinetics" title="Permalink to this headline"></a></h2>
-<p>The kinetics_library defines the cure kinetics model. Some popular models are provided, such as</p>
+<p>The kinetics library defines the cure kinetics model. Some popular models are provided, such as</p>
 <p>the first order,</p>
 <div class="math notranslate nohighlight">
 \[g(\alpha) = (1 - \alpha),\]</div>
@@ -200,7 +200,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <p>the Prout Tompkins Diffusion model,</p>
 <div class="math notranslate nohighlight">
 \[g(\alpha)= (1-\alpha)^n \alpha^m \frac{1}{1+\exp \left[C\left(\alpha-\alpha_c\right)\right]}.\]</div>
-<p>A custom cure kinetics model can also be defined by writing your own kinetics class following above examples.</p>
+<p>A custom cure kinetics model can also be defined by writing your own kinetics class following these provided examples.</p>
 <span class="target" id="module-kinetics_library"></span><dl class="py class">
 <dt class="sig sig-object py" id="kinetics_library.Kinetics_Model">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kinetics_library.</span></span><span class="sig-name descname"><span class="pre">Kinetics_Model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">KMexpression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">para</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Kinetics_Model" title="Permalink to this definition"></a></dt>

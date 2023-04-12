@@ -1,6 +1,6 @@
 FP Solver
 ==================
-This section provides details of classes and functions of this solver.
+This section provides details of classes and functions of this FP solver.
 
 Main solver
 --------------------
@@ -11,7 +11,7 @@ Main solver
 
 Cure kinetics
 ------------------------------
-The kinetics_library defines the cure kinetics model. Some popular models are provided, such as
+The kinetics library defines the cure kinetics model. Some popular models are provided, such as
 
 the first order, 
 
@@ -33,7 +33,7 @@ the Prout Tompkins Diffusion model,
 .. math::
   g(\alpha)= (1-\alpha)^n \alpha^m \frac{1}{1+\exp \left[C\left(\alpha-\alpha_c\right)\right]}.
 
-A custom cure kinetics model can also be defined by writing your own kinetics class following above examples.
+A custom cure kinetics model can also be defined by writing your own kinetics class following these provided examples.
 
 .. automodule:: kinetics_library
   :members:
