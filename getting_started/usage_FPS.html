@@ -46,7 +46,7 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3. Usage of FPS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-run">3.1. How to run?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-run-fps">3.1. How to run FPS?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#example-dcpd-py">3.2. example_DCPD.py</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#example-cod-py">3.3. example_COD.py</a></li>
 </ul>
@@ -80,23 +80,23 @@
              
   <section id="usage-of-fps">
 <h1><span class="section-number">3. </span>Usage of FPS<a class="headerlink" href="#usage-of-fps" title="Permalink to this headline"></a></h1>
-<section id="how-to-run">
-<h2><span class="section-number">3.1. </span>How to run?<a class="headerlink" href="#how-to-run" title="Permalink to this headline"></a></h2>
-<p>First, activate the fenics virtual environment:</p>
+<section id="how-to-run-fps">
+<h2><span class="section-number">3.1. </span>How to run FPS?<a class="headerlink" href="#how-to-run-fps" title="Permalink to this headline"></a></h2>
+<p class="linemarker linemarker-7">First, activate the fenics virtual environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate fenics
 </pre></div>
 </div>
-<p>Change to the path where the code files (example_DCPD.py, etc.) are placed</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /desired/path <span class="c1"># for linux/Mac</span>
+<p class="linemarker linemarker-13">Change to the path where the code files (example_DCPD.py, etc.) are placed</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /desired/path <span class="c1"># for Linux/Mac</span>
 <span class="nb">cd</span> /mnt/c/foldername  <span class="c1"># for WSL, here c is the disk name, like C:\</span>
 </pre></div>
 </div>
-<p>Note: You should ensure the python file to be run is in the same folder as the files solver_FP.py, kinetics_library.py, and postProcess_FP.py.</p>
-<p>Run the script ‘test_FP.py’_ from the command line with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python test_FP.py  <span class="c1"># run the DCPD example</span>
+<p class="linemarker linemarker-20">Note: You should ensure the python file to be run is in the same folder as the files solver_FP.py, kinetics_library.py, and postProcess_FP.py.</p>
+<p class="linemarker linemarker-22">Run the script ‘test_FP.py’_ from the command line with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python test_FP.py  <span class="c1">#Rrun the DCPD example</span>
 </pre></div>
 </div>
-<p>This will run a unit test to confirm that you have successfully installed fenics and the code is working properly on your machine. If successful, the following output should appear at the end of the command line</p>
+<p class="linemarker linemarker-28">This will run a unit test to confirm that you have successfully installed fenics and the code is working properly on your machine. If successful, the following output should appear at the end of the command line</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FP</span> <span class="n">velocity</span> <span class="mf">1.515e+00</span> <span class="p">(</span><span class="n">mm</span><span class="o">/</span><span class="n">s</span><span class="p">)</span>
 <span class="o">.</span>
 <span class="o">----------------------------------------------------------------------</span>
@@ -105,11 +105,11 @@
 <span class="n">OK</span>
 </pre></div>
 </div>
-<p>We have included two example scripts that demonstrate the capabilities of this code. Shown below are implementations for simulating frontal polymerization of DCPD and COD, in the scripts <a class="reference internal" href="#example-dcpd-py">example_DCPD.py</a> and <a class="reference internal" href="#example-cod-py">example_COD.py</a>, respectively. Now run the python script for FP of DCPD:</p>
+<p class="linemarker linemarker-38">We have included two example scripts that demonstrate the capabilities of this code. Shown below are implementations for simulating frontal polymerization of DCPD and COD, in the scripts <a class="reference internal" href="#example-dcpd-py">example_DCPD.py</a> and <a class="reference internal" href="#example-cod-py">example_COD.py</a>, respectively. Now run the python script for FP of DCPD:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python example_DCPD.py  <span class="c1"># run the DCPD example</span>
 </pre></div>
 </div>
-<p>After the simulation is completed, one simulation report file  ‘./out_DCPD/Report_DCPD.html’ (<a class="reference external" href="../_static/Report_DCPD.html">example report</a>) is automatically generated and can be opened in a browser.</p>
+<p class="linemarker linemarker-44">After the simulation is completed, one simulation report file  ‘./out_DCPD/Report_DCPD.html’ (<a class="reference external" href="../_static/Report_DCPD.html">example report</a>) is automatically generated and can be opened in a browser.</p>
 </section>
 <section id="example-dcpd-py">
 <span id="id1"></span><h2><span class="section-number">3.2. </span>example_DCPD.py<a class="headerlink" href="#example-dcpd-py" title="Permalink to this headline"></a></h2>
@@ -164,26 +164,22 @@
 
 <span class="c1"># Run the solver until 10 s</span>
 <span class="n">t_end</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">,</span> <span class="n">T_data</span><span class="p">,</span> <span class="n">alpha_data</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span>
+<span class="n">results_data</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span>
     <span class="n">t_end</span><span class="p">,</span> <span class="n">outputFreq_t</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">outputFreq_x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># %%</span>
 <span class="c1"># Post-process - generate report, compute the front speed, and save an animation of the temperature and alpha fronts</span>
-<span class="n">save_dir</span> <span class="o">=</span> <span class="s2">&quot;out_DCPD&quot;</span> <span class="c1"># path to save the result files.</span>
-<span class="n">pts_</span><span class="o">=</span><span class="p">[</span><span class="mf">2e-3</span><span class="p">,</span> <span class="mf">5e-3</span><span class="p">]</span> <span class="c1"># Get evolution of alpha and T at this points</span>
-<span class="n">post_pro</span> <span class="o">=</span> <span class="n">Post_process</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">,</span> <span class="n">T_data</span><span class="p">,</span> <span class="n">alpha_data</span><span class="p">,</span> <span class="n">solver</span><span class="p">,</span> <span class="n">pts</span><span class="o">=</span><span class="n">pts_</span><span class="p">,</span> <span class="n">save_dir</span><span class="o">=</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">save_suffix</span><span class="o">=</span><span class="s2">&quot;DCPD&quot;</span><span class="p">,</span> <span class="n">anim_frames</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">fid</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">post_pro</span><span class="o">.</span><span class="n">generateReport</span><span class="p">()</span>
+<span class="n">save_dir</span> <span class="o">=</span> <span class="s2">&quot;out_DCPD&quot;</span>  <span class="c1"># path to save the result files.</span>
+<span class="n">pts_</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2e-3</span><span class="p">,</span> <span class="mf">5e-3</span><span class="p">]</span>  <span class="c1"># Get evolution of alpha and T at this points</span>
+<span class="c1"># create post process object</span>
+<span class="n">post_pro</span> <span class="o">=</span> <span class="n">Post_process</span><span class="p">(</span><span class="n">results_data</span><span class="p">,</span> <span class="n">solver</span><span class="p">,</span> <span class="n">pts</span><span class="o">=</span><span class="n">pts_</span><span class="p">,</span>
+                        <span class="n">save_dir</span><span class="o">=</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">save_suffix</span><span class="o">=</span><span class="s2">&quot;DCPD&quot;</span><span class="p">,</span> <span class="n">anim_frames</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">fid</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">post_pro</span><span class="o">.</span><span class="n">generateReport</span><span class="p">()</span>  <span class="c1"># generate report</span>
 
 
 <span class="c1"># %%</span>
 <span class="c1"># Pack the results for future use</span>
-<span class="n">saveData</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">saveData</span><span class="p">[</span><span class="s1">&#39;x_data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x_data</span>
-<span class="n">saveData</span><span class="p">[</span><span class="s1">&#39;t_data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_data</span>
-<span class="n">saveData</span><span class="p">[</span><span class="s1">&#39;alpha_data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha_data</span>
-<span class="n">saveData</span><span class="p">[</span><span class="s1">&#39;Temp_data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">T_data</span>
-
-<span class="n">saveResults</span><span class="p">(</span><span class="n">saveData</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_DCPD&quot;</span><span class="p">)</span>  <span class="c1"># save to .mat file</span>
+<span class="n">saveResults</span><span class="p">(</span><span class="n">results_data</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_DCPD&quot;</span><span class="p">)</span>  <span class="c1"># save to .mat file</span>
 <span class="n">loadedResults</span> <span class="o">=</span> <span class="n">loadResults</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_DCPD&quot;</span><span class="p">)</span>  <span class="c1"># load from .mat file</span>
 </pre></div>
 </div>
@@ -244,24 +240,20 @@
 
 <span class="c1"># Run the solver until 10 s</span>
 <span class="n">t_end</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">,</span> <span class="n">T_data</span><span class="p">,</span> <span class="n">alpha_data</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span>
+<span class="n">results_data</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span>
     <span class="n">t_end</span><span class="p">,</span> <span class="n">outputFreq_t</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">outputFreq_x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Post-process - generate the report, compute the front speed, and save an animation of the temperature and alpha fronts</span>
-<span class="n">save_dir</span> <span class="o">=</span> <span class="s2">&quot;out_COD&quot;</span> <span class="c1"># path to save results.</span>
-<span class="n">post_pro</span> <span class="o">=</span> <span class="n">Post_process</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">,</span> <span class="n">T_data</span><span class="p">,</span> <span class="n">alpha_data</span><span class="p">,</span> <span class="n">solver</span><span class="p">,</span><span class="n">pts</span><span class="o">=</span><span class="p">[],</span>
+<span class="n">save_dir</span> <span class="o">=</span> <span class="s2">&quot;out_COD&quot;</span>  <span class="c1"># path to save results.</span>
+<span class="n">pltTpeak_</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># plot the maximum temperature along x-direction</span>
+<span class="c1"># create post process object</span>
+<span class="n">post_pro</span> <span class="o">=</span> <span class="n">Post_process</span><span class="p">(</span><span class="n">results_data</span><span class="p">,</span> <span class="n">solver</span><span class="p">,</span> <span class="n">pts</span><span class="o">=</span><span class="p">[],</span> <span class="n">pltTpeak</span><span class="o">=</span><span class="n">pltTpeak_</span><span class="p">,</span>
                         <span class="n">save_dir</span><span class="o">=</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">save_suffix</span><span class="o">=</span><span class="s2">&quot;COD&quot;</span><span class="p">,</span> <span class="n">anim_frames</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">fid</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">post_pro</span><span class="o">.</span><span class="n">generateReport</span><span class="p">()</span>
+<span class="n">post_pro</span><span class="o">.</span><span class="n">generateReport</span><span class="p">()</span>  <span class="c1"># generate report</span>
 
 <span class="c1"># %%</span>
 <span class="c1"># Pack the results for future use</span>
-<span class="n">saveData</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">saveData</span><span class="p">[</span><span class="s1">&#39;x_data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x_data</span>
-<span class="n">saveData</span><span class="p">[</span><span class="s1">&#39;t_data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_data</span>
-<span class="n">saveData</span><span class="p">[</span><span class="s1">&#39;alpha_data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha_data</span>
-<span class="n">saveData</span><span class="p">[</span><span class="s1">&#39;Temp_data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">T_data</span>
-
-<span class="n">saveResults</span><span class="p">(</span><span class="n">saveData</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_COD&quot;</span><span class="p">)</span>  <span class="c1"># save to .mat file</span>
+<span class="n">saveResults</span><span class="p">(</span><span class="n">results_data</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_COD&quot;</span><span class="p">)</span>  <span class="c1"># save to .mat file</span>
 <span class="n">loadedResults</span> <span class="o">=</span> <span class="n">loadResults</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_COD&quot;</span><span class="p">)</span>  <span class="c1"># load from .mat file</span>
 </pre></div>
 </div>

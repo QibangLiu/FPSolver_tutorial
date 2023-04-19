@@ -1,31 +1,31 @@
 Installation
 ==========================
 
-This solver is developed based on FENICS, which is run on Linux-based platform. It can, however, also be run on Windows systems.
+This solver is developed based on FENICS, which is run on a Linux-based platform. It can, however, also be run on Windows systems.
 
 Installing WSL for Windows users
 ---------------------------------
-This section is for Windows users only. For linux or Mac OS users, please skip this section.
+This section is for Windows users only. For Linux or Mac OS users, please skip this section.
 
 For Windows users, `WSL`_ (Windows Subsystem for Linux) will be needed. 
 
-To install WSL, open PowerShell or Windows Command Prompt in administrator mode by searching in the Start menu, right-clicking it and selecting "Run as administrator". Enter the command 
+To install WSL, open PowerShell or Windows Command Prompt in administrator mode by searching in the Start menu, right-clicking it, and selecting "Run as administrator." Enter the command: 
 
 .. code:: PowerShell
 
   wsl --install
 
-and then restart your machine. For more details of WSL's intallations, please refer to https://learn.microsoft.com/en-us/windows/wsl/install
+and then restart your machine. For more details on WSL's installation, please refer to https://learn.microsoft.com/en-us/windows/wsl/install.
 
-After WSL is installed, open a linux terminal shell by going to the Start menu and running 'Ubuntu', from which a unix account name and password should be set first (The password can be empty).
+After installing WSL, open a Linux terminal shell by going to the Start menu and running 'Ubuntu', from which a Unix account name and password should be set first (The password can be empty).
 
-Then please follow below sections to install FENICS
+Then please follow the below sections to install FENICS.
 
 .. _`WSL` : https://learn.microsoft.com/en-us/windows/wsl/install
 
 Install conda
 ---------------------------------
-We recommand using conda to install fenics.
+We recommend using conda to install fenics.
 
 Check whether conda is already installed on your machine. Open a terminal shell and input:
 
@@ -33,7 +33,7 @@ Check whether conda is already installed on your machine. Open a terminal shell 
 
   which conda
 
-This command will display the path where conda is intalled. If conda is not found, install it using Mambaforge3:
+This command will display the path where conda is installed. If conda is not found, install it using Mambaforge3:
 
 - Linux Users:
 
@@ -137,6 +137,8 @@ Each time we use fenics, activation of the fenics virtual environment is needed:
 
 Uninstall the fenics environment
 ---------------------------------
+
+If you do not use fenics anymore, you may uninstall it:
 
 .. code:: bash
   

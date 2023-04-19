@@ -232,8 +232,10 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kinetics_library.</span></span><span class="sig-name descname"><span class="pre">First_Order</span></span><a class="headerlink" href="#kinetics_library.First_Order" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#kinetics_library.Kinetics_Model" title="kinetics_library.Kinetics_Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">kinetics_library.Kinetics_Model</span></code></a></p>
 <p>First order reaction model of the form:</p>
-<p>dalpha/dt = A*exp(-E/R*T)*g(alpha)</p>
-<p>g(alpha) = (1 - alpha)</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\alpha}{dt} = A\exp(\frac{-E}{RT})g(\alpha)\]</div>
+<div class="math notranslate nohighlight">
+\[g(\alpha) = (1 - \alpha)\]</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="kinetics_library.First_Order.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.First_Order.__init__" title="Permalink to this definition"></a></dt>
@@ -258,8 +260,10 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kinetics_library.</span></span><span class="sig-name descname"><span class="pre">Nth_Order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Nth_Order" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#kinetics_library.Kinetics_Model" title="kinetics_library.Kinetics_Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">kinetics_library.Kinetics_Model</span></code></a></p>
 <p>nth order reaction model of the form:</p>
-<p>dalpha/dt = A*exp(-E/R*T)*g(alpha)</p>
-<p>g(alpha) = (1 - alpha)^n</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\alpha}{dt} = A\exp(\frac{-E}{RT})g(\alpha)\]</div>
+<div class="math notranslate nohighlight">
+\[g(\alpha) = (1 - \alpha)^n\]</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="kinetics_library.Nth_Order.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Nth_Order.__init__" title="Permalink to this definition"></a></dt>
@@ -288,8 +292,10 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kinetics_library.</span></span><span class="sig-name descname"><span class="pre">Prout_Tompkins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Prout_Tompkins" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#kinetics_library.Kinetics_Model" title="kinetics_library.Kinetics_Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">kinetics_library.Kinetics_Model</span></code></a></p>
 <p>Prout Tompkins reaction model of the form:</p>
-<p>dalpha/dt = A*exp(-E/R*T)*g(alpha)</p>
-<p>g(alpha) = (1 - alpha)^n * alpha^m</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\alpha}{dt} = A\exp(\frac{-E}{RT})g(\alpha)\]</div>
+<div class="math notranslate nohighlight">
+\[g(\alpha) = (1 - \alpha)^n \alpha^m\]</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="kinetics_library.Prout_Tompkins.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Prout_Tompkins.__init__" title="Permalink to this definition"></a></dt>
@@ -321,8 +327,10 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kinetics_library.</span></span><span class="sig-name descname"><span class="pre">Prout_Tompkins_Diffusion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ca</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Prout_Tompkins_Diffusion" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#kinetics_library.Kinetics_Model" title="kinetics_library.Kinetics_Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">kinetics_library.Kinetics_Model</span></code></a></p>
 <p>Prout Tompkins with diffusion term reaction model of the form:</p>
-<p>dalpha/dt = A*exp(-E/R*T)*g(alpha)</p>
-<p>g(alpha) = (1 - alpha)^n * alpha^m * 1/exp(Ca*(alpha - alpha_c))</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\alpha}{dt} = A\exp(\frac{-E}{RT})g(\alpha)\]</div>
+<div class="math notranslate nohighlight">
+\[g(\alpha) =\frac{(1 - \alpha)^n \alpha^m}{\exp(Ca(\alpha - \alpha_c))}\]</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="kinetics_library.Prout_Tompkins_Diffusion.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ca</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Prout_Tompkins_Diffusion.__init__" title="Permalink to this definition"></a></dt>
@@ -356,19 +364,22 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <span id="post-process"></span><h2><span class="section-number">4.3. </span>Post process<a class="headerlink" href="#module-postProcess_FP" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="postProcess_FP.Post_process">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">postProcess_FP.</span></span><span class="sig-name descname"><span class="pre">Post_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpSolver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'example'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anim_frames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#postProcess_FP.Post_process" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">postProcess_FP.</span></span><span class="sig-name descname"><span class="pre">Post_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpSolver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pltTpeak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'example'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anim_frames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#postProcess_FP.Post_process" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A post-process class for creating report, as well as plotting the evolution of alpha and T at given points,
 computing frontal speed, and generating the animation of evolution of alpha and T.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="postProcess_FP.Post_process.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpSolver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'example'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anim_frames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#postProcess_FP.Post_process.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpSolver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pltTpeak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'example'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anim_frames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#postProcess_FP.Post_process.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initializes the Post process using the supplied parameters</p>
-<p>x_data, t_data, T_data, alpha_data as returned by FP_solver.solve()</p>
 <dl class="simple">
+<dt>results_data - dictionary</dt><dd><p>results returned by FP_solver.solve(), including  x_data, t_data, T_data, alpha_data, T_peak</p>
+</dd>
 <dt>fpSolver - object</dt><dd><p>The FP solver, needed for generating the report</p>
 </dd>
 <dt>pts - list</dt><dd><p>list of x-coordinates (float, unit (m)), extract the T/alpha vs time at pts. Default is empty.</p>
+</dd>
+<dt>pltTpeak - bool</dt><dd><p>plot the maximum temperature along x-direction, default is False</p>
 </dd>
 <dt>save_dir - str</dt><dd><p>The relative path to which front position vs time plot is saved. Default is “out”</p>
 </dd>
@@ -389,10 +400,11 @@ Default is “example”</p>
 Returns the front speed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The front speed computed from the slope of a linear fit through the front position vs time curve</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>Vfem - float</em> – The front speed computed from the slope of a linear fit through the front position vs time curve</p></li>
+<li><p><em>rptStr - string</em> – A string in html format for generating the report.</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -406,6 +418,20 @@ Returns the front speed.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="postProcess_FP.Post_process.evoluAtPts">
 <span class="sig-name descname"><span class="pre">evoluAtPts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postProcess_FP.Post_process.evoluAtPts" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the evolution of alpha and T at given points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A string in html format for generating the report.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="postProcess_FP.Post_process.plotT_peak">
+<span class="sig-name descname"><span class="pre">plotT_peak</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postProcess_FP.Post_process.plotT_peak" title="Permalink to this definition"></a></dt>
 <dd><p>Plot the evolution of alpha and T at given points.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -451,7 +477,7 @@ Returns the front speed.</p>
 <dd><p>Unpacks the supplied .mat file into a dictionary and returns</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>dictionary with variable names as ‘x_data’,’t_data’, ‘alpha_data’,’Temp_data’,and loaded matrices as values</p>
+<dd class="field-odd"><p>dictionary with variable names as ‘x_data’,’t_data’, ‘alpha_data’,’T_data’,’T_peak’, and loaded matrices as values</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>dictionary</p>

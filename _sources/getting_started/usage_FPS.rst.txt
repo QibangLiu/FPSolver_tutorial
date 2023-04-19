@@ -1,7 +1,7 @@
 Usage of FPS
 ================
 
-How to run?
+How to run FPS?
 ------------------
 
 First, activate the fenics virtual environment:
@@ -14,7 +14,7 @@ Change to the path where the code files (example_DCPD.py, etc.) are placed
 
 .. code:: bash
 
-  cd /desired/path # for linux/Mac
+  cd /desired/path # for Linux/Mac
   cd /mnt/c/foldername  # for WSL, here c is the disk name, like C:\
 
 Note: You should ensure the python file to be run is in the same folder as the files solver_FP.py, kinetics_library.py, and postProcess_FP.py.
@@ -23,7 +23,7 @@ Run the script 'test_FP.py'_ from the command line with:
 
 .. code:: bash
 
-    python test_FP.py  # run the DCPD example 
+    python test_FP.py  #Rrun the DCPD example 
 
 This will run a unit test to confirm that you have successfully installed fenics and the code is working properly on your machine. If successful, the following output should appear at the end of the command line ::
 

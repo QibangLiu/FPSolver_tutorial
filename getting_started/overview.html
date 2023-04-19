@@ -15,6 +15,7 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -75,7 +76,16 @@
              
   <section id="overview">
 <h1><span class="section-number">1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h1>
-<p>This Frontal Polymerization Solver (1D) is developed based on <a class="reference external" href="https://fenicsproject.org/">FENICS</a> which is a popular open-source computing platform for solving partial differential equations (PDEs)</p>
+<p class="linemarker linemarker-4">The propagation of a polymerization front can be described by a thermo-chemical model based on two coupled reaction-diffusion partial differential equations (PDEs) expressed in terms of the temperature <span class="math notranslate nohighlight">\(T\)</span> and degree of cure <span class="math notranslate nohighlight">\(\alpha\)</span> as follows,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation}
+\left\{\begin{array}{l}
+\kappa \nabla^2 T+\rho H_r \frac{\partial \alpha}{\partial t}=\rho C_p \frac{\partial T}{\partial t}, \\
+\frac{\partial \alpha}{\partial t}= A \exp \left(-\frac{E}{R T}\right) g(\alpha),
+\end{array}\right.
+\end{equation}\end{split}\]</div>
+<p class="linemarker linemarker-15">where the first equation describes heat diffusion, and the second equation describes the cure kinetics of the FP reaction.</p>
+<p class="linemarker linemarker-17">This Frontal Polymerization Solver (FPS, 1D) is developed based on <a class="reference external" href="https://fenicsproject.org/">FENICS</a>, a popular open-source computing platform for solving PDEs.</p>
 </section>
 
 
