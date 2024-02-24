@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3. Usage of FPS &mdash; Fenics-based Frontal Polymerization Solver 0.0.1 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>3. Usage of FPS &mdash; Fenics-based Frontal Polymerization Solver 0.0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=c1dcd045"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -79,24 +82,24 @@
            <div itemprop="articleBody">
              
   <section id="usage-of-fps">
-<h1><span class="section-number">3. </span>Usage of FPS<a class="headerlink" href="#usage-of-fps" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">3. </span>Usage of FPS<a class="headerlink" href="#usage-of-fps" title="Permalink to this heading"></a></h1>
 <section id="how-to-run-fps">
-<h2><span class="section-number">3.1. </span>How to run FPS?<a class="headerlink" href="#how-to-run-fps" title="Permalink to this headline"></a></h2>
-<p class="linemarker linemarker-7">First, activate the fenics virtual environment:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate fenics
+<h2><span class="section-number">3.1. </span>How to run FPS?<a class="headerlink" href="#how-to-run-fps" title="Permalink to this heading"></a></h2>
+<p>First, activate the fenics virtual environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>fenics
 </pre></div>
 </div>
-<p class="linemarker linemarker-13">Change to the path where the code files (example_DCPD.py, etc.) are placed</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /desired/path <span class="c1"># for Linux/Mac</span>
-<span class="nb">cd</span> /mnt/c/foldername  <span class="c1"># for WSL, here c is the disk name, like C:\</span>
+<p>Change to the path where the code files (example_DCPD.py, etc.) are placed</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/desired/path<span class="w"> </span><span class="c1"># for Linux/Mac</span>
+<span class="nb">cd</span><span class="w"> </span>/mnt/c/foldername<span class="w">  </span><span class="c1"># for WSL, here c is the disk name, like C:\</span>
 </pre></div>
 </div>
-<p class="linemarker linemarker-20">Note: You should ensure the python file to be run is in the same folder as the files solver_FP.py, kinetics_library.py, and postProcess_FP.py.</p>
-<p class="linemarker linemarker-22">Run the script ‘test_FP.py’_ from the command line with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python test_FP.py  <span class="c1">#Rrun the DCPD example</span>
+<p>Note: You should ensure the python file to be run is in the same folder as the files solver_FP.py, kinetics_library.py, and postProcess_FP.py.</p>
+<p>Run the script ‘test_FP.py’_ from the command line with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>test_FP.py<span class="w">  </span><span class="c1">#Rrun the DCPD example</span>
 </pre></div>
 </div>
-<p class="linemarker linemarker-28">This will run a unit test to confirm that you have successfully installed fenics and the code is working properly on your machine. If successful, the following output should appear at the end of the command line</p>
+<p>This will run a unit test to confirm that you have successfully installed fenics and the code is working properly on your machine. If successful, the following output should appear at the end of the command line</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FP</span> <span class="n">velocity</span> <span class="mf">1.515e+00</span> <span class="p">(</span><span class="n">mm</span><span class="o">/</span><span class="n">s</span><span class="p">)</span>
 <span class="o">.</span>
 <span class="o">----------------------------------------------------------------------</span>
@@ -105,14 +108,18 @@
 <span class="n">OK</span>
 </pre></div>
 </div>
-<p class="linemarker linemarker-38">We have included two example scripts that demonstrate the capabilities of this code. Shown below are implementations for simulating frontal polymerization of DCPD and COD, in the scripts <a class="reference internal" href="#example-dcpd-py">example_DCPD.py</a> and <a class="reference internal" href="#example-cod-py">example_COD.py</a>, respectively. Now run the python script for FP of DCPD:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python example_DCPD.py  <span class="c1"># run the DCPD example</span>
+<p>We have included two example scripts that demonstrate the capabilities of this code. Shown below are implementations for simulating frontal polymerization of DCPD and COD, in the scripts <a class="reference internal" href="#example-dcpd-py">example_DCPD.py</a> and <a class="reference internal" href="#example-cod-py">example_COD.py</a>, respectively. Now run the python script for FP of DCPD:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>example_DCPD.py<span class="w">  </span><span class="c1"># run the DCPD example</span>
 </pre></div>
 </div>
-<p class="linemarker linemarker-44">After the simulation is completed, one simulation report file  ‘./out_DCPD/Report_DCPD.html’ (<a class="reference external" href="../_static/Report_DCPD.html">example report</a>) is automatically generated and can be opened in a browser.</p>
+<p>If very fine mesh is used, you may paralell run the simulation for saving computational time:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpirun<span class="w"> </span>-n<span class="w"> </span><span class="m">4</span><span class="w"> </span>python<span class="w"> </span>example_DCPD.py<span class="w">  </span><span class="c1"># run the DCPD example with 4 CPUs</span>
+</pre></div>
+</div>
+<p>After the simulation is completed, one simulation report file  ‘./out_DCPD/Report_DCPD.html’ (<a class="reference external" href="../_static/Report_DCPD.html">example report</a>) is automatically generated and can be opened in a browser.</p>
 </section>
 <section id="example-dcpd-py">
-<span id="id1"></span><h2><span class="section-number">3.2. </span>example_DCPD.py<a class="headerlink" href="#example-dcpd-py" title="Permalink to this headline"></a></h2>
+<span id="id1"></span><h2><span class="section-number">3.2. </span>example_DCPD.py<a class="headerlink" href="#example-dcpd-py" title="Permalink to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%</span>
 <span class="c1"># Geubelle research group</span>
 <span class="c1"># Authors:  Qibang Liu (qibang@illinois.edu)</span>
@@ -124,15 +131,9 @@
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">solver_FP</span> <span class="kn">import</span> <span class="n">FP_solver</span>
-<span class="kn">from</span> <span class="nn">kinetics_library</span> <span class="kn">import</span> <span class="n">Prout_Tompkins_Diffusion</span>
+<span class="kn">from</span> <span class="nn">kinetics_library</span> <span class="kn">import</span> <span class="n">Prout_Tompkins_Diffusion</span><span class="p">,</span> <span class="n">Prout_Tompkins</span>
 <span class="kn">from</span> <span class="nn">postProcess_FP</span> <span class="kn">import</span> <span class="n">Post_process</span><span class="p">,</span> <span class="n">saveResults</span><span class="p">,</span> <span class="n">loadResults</span>
-
-
-<span class="c1"># Switch to current directory</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cannot switch directories&quot;</span><span class="p">)</span>
+<span class="c1"># test prcharm remote</span>
 
 <span class="c1"># Thermo-chemical properties</span>
 <span class="n">kr</span> <span class="o">=</span> <span class="mf">0.15</span>      <span class="c1"># thermal conductivity, W/m-K</span>
@@ -141,8 +142,8 @@
 
 <span class="c1"># Nature values</span>
 <span class="n">Hr</span> <span class="o">=</span> <span class="mi">350000</span>    <span class="c1"># enthalpy, J/kg</span>
-<span class="n">A_</span> <span class="o">=</span> <span class="mf">8.55e15</span>    <span class="c1"># pre-exponential constant, 1/s</span>
-<span class="n">Er</span> <span class="o">=</span> <span class="mf">110750.0</span>   <span class="c1"># activation energy J/mol</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">8.55e15</span>    <span class="c1"># pre-exponential constant, 1/s</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mf">110750.0</span>   <span class="c1"># activation energy J/mol</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mf">1.72</span>        <span class="c1"># cure kinetics parameter</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mf">0.77</span>        <span class="c1"># cure kinetics parameter</span>
 <span class="n">Ca</span> <span class="o">=</span> <span class="mf">14.48</span>      <span class="c1"># cure kinetics parameter</span>
@@ -152,27 +153,27 @@
 <span class="n">ptd_model</span> <span class="o">=</span> <span class="n">Prout_Tompkins_Diffusion</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">Ca</span><span class="p">,</span> <span class="n">alpha_c</span><span class="p">)</span>
 
 <span class="c1"># Initial conditions for temperature and degree of cure</span>
-<span class="n">T0</span> <span class="o">=</span> <span class="mi">20</span>         <span class="c1"># deg C</span>
-<span class="n">alpha0</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">T0</span> <span class="o">=</span> <span class="mi">23</span>         <span class="c1"># deg C</span>
+<span class="n">alpha0</span> <span class="o">=</span> <span class="mf">0.05</span>
 
 <span class="c1"># Length of domain</span>
 <span class="n">L</span> <span class="o">=</span> <span class="mf">0.01</span>
 
 <span class="c1"># Initialize the solver with the parameters</span>
-<span class="n">solver</span> <span class="o">=</span> <span class="n">FP_solver</span><span class="p">(</span><span class="n">kr</span><span class="p">,</span> <span class="n">rhor</span><span class="p">,</span> <span class="n">Cpr</span><span class="p">,</span> <span class="n">Hr</span><span class="p">,</span> <span class="n">A_</span><span class="p">,</span> <span class="n">Er</span><span class="p">,</span>
-                   <span class="n">ptd_model</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">alpha0</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="n">L</span><span class="p">,</span> <span class="n">h_x</span><span class="o">=</span><span class="mf">2e-5</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">FP_solver</span><span class="p">(</span><span class="n">kr</span><span class="p">,</span> <span class="n">rhor</span><span class="p">,</span> <span class="n">Cpr</span><span class="p">,</span> <span class="n">Hr</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span>
+                   <span class="n">ptd_model</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">alpha0</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="n">L</span><span class="p">,</span><span class="n">T_trig</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">h_x</span><span class="o">=</span><span class="mf">0.01e-3</span><span class="p">)</span>
 
 <span class="c1"># Run the solver until 10 s</span>
 <span class="n">t_end</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">results_data</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span>
-    <span class="n">t_end</span><span class="p">,</span> <span class="n">outputFreq_t</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">outputFreq_x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">t_end</span><span class="p">,</span> <span class="n">outputFreq_t</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">outputFreq_x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># %%</span>
 <span class="c1"># Post-process - generate report, compute the front speed, and save an animation of the temperature and alpha fronts</span>
 <span class="n">save_dir</span> <span class="o">=</span> <span class="s2">&quot;out_DCPD&quot;</span>  <span class="c1"># path to save the result files.</span>
 <span class="n">pts_</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2e-3</span><span class="p">,</span> <span class="mf">5e-3</span><span class="p">]</span>  <span class="c1"># Get evolution of alpha and T at this points</span>
 <span class="c1"># create post process object</span>
-<span class="n">post_pro</span> <span class="o">=</span> <span class="n">Post_process</span><span class="p">(</span><span class="n">results_data</span><span class="p">,</span> <span class="n">solver</span><span class="p">,</span> <span class="n">pts</span><span class="o">=</span><span class="n">pts_</span><span class="p">,</span>
+<span class="n">post_pro</span> <span class="o">=</span> <span class="n">Post_process</span><span class="p">(</span><span class="n">results_data</span><span class="p">,</span> <span class="n">solver</span><span class="p">,</span> <span class="n">pts</span><span class="o">=</span><span class="n">pts_</span><span class="p">,</span><span class="n">pltTpeak</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                         <span class="n">save_dir</span><span class="o">=</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">save_suffix</span><span class="o">=</span><span class="s2">&quot;DCPD&quot;</span><span class="p">,</span> <span class="n">anim_frames</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">fid</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">post_pro</span><span class="o">.</span><span class="n">generateReport</span><span class="p">()</span>  <span class="c1"># generate report</span>
 
@@ -185,7 +186,7 @@
 </div>
 </section>
 <section id="example-cod-py">
-<span id="id2"></span><h2><span class="section-number">3.3. </span>example_COD.py<a class="headerlink" href="#example-cod-py" title="Permalink to this headline"></a></h2>
+<span id="id2"></span><h2><span class="section-number">3.3. </span>example_COD.py<a class="headerlink" href="#example-cod-py" title="Permalink to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%</span>
 <span class="c1"># Geubelle research group</span>
 <span class="c1"># Authors:  Qibang Liu (qibang@illinois.edu)</span>
@@ -201,12 +202,6 @@
 <span class="kn">from</span> <span class="nn">kinetics_library</span> <span class="kn">import</span> <span class="n">Prout_Tompkins</span>
 <span class="kn">from</span> <span class="nn">postProcess_FP</span> <span class="kn">import</span> <span class="n">Post_process</span><span class="p">,</span> <span class="n">saveResults</span><span class="p">,</span> <span class="n">loadResults</span>
 
-
-<span class="c1"># Switch to current directory</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cannot switch directories&quot;</span><span class="p">)</span>
 
 <span class="c1"># Thermo-chemical properties</span>
 <span class="n">kr</span> <span class="o">=</span> <span class="mf">0.133</span>     <span class="c1"># thermal conductivity, W/m-K</span>
@@ -224,22 +219,23 @@
 <span class="n">pt_model</span> <span class="o">=</span> <span class="n">Prout_Tompkins</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 
 <span class="c1"># Initial conditions for temperature and degree of cure</span>
-<span class="n">T0</span> <span class="o">=</span> <span class="mi">10</span>         <span class="c1"># deg C</span>
-<span class="n">alpha0</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">T0</span> <span class="o">=</span> <span class="mi">23</span>         <span class="c1"># deg C</span>
+<span class="n">alpha0</span> <span class="o">=</span> <span class="mf">0.01</span>
 
 <span class="c1"># Length of domain</span>
-<span class="n">L</span> <span class="o">=</span> <span class="mf">0.005</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">0.010</span>
 
 <span class="c1"># Thermal trigger</span>
-<span class="n">T_trig</span> <span class="o">=</span> <span class="mi">130</span>  <span class="c1"># deg C</span>
+<span class="n">T_trig</span> <span class="o">=</span> <span class="mi">160</span>  <span class="c1"># deg C</span>
 <span class="n">t_trig</span> <span class="o">=</span> <span class="mf">2.5</span>  <span class="c1"># s</span>
 
+<span class="n">dt</span><span class="p">,</span><span class="n">h_x</span><span class="o">=</span><span class="mf">0.25e-3</span><span class="p">,</span><span class="mf">6e-6</span>
 <span class="c1"># Initialize the solver with the parameters</span>
 <span class="n">solver</span> <span class="o">=</span> <span class="n">FP_solver</span><span class="p">(</span><span class="n">kr</span><span class="p">,</span> <span class="n">rhor</span><span class="p">,</span> <span class="n">Cpr</span><span class="p">,</span> <span class="n">Hr</span><span class="p">,</span> <span class="n">A_</span><span class="p">,</span> <span class="n">Er</span><span class="p">,</span> <span class="n">pt_model</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">alpha0</span><span class="p">,</span>
-                   <span class="n">T_trig</span><span class="o">=</span><span class="n">T_trig</span><span class="p">,</span> <span class="n">t_trig</span><span class="o">=</span><span class="n">t_trig</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="n">L</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.25e-3</span><span class="p">,</span> <span class="n">h_x</span><span class="o">=</span><span class="mf">0.5e-5</span><span class="p">)</span>
+                   <span class="n">T_trig</span><span class="o">=</span><span class="n">T_trig</span><span class="p">,</span> <span class="n">t_trig</span><span class="o">=</span><span class="n">t_trig</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="n">L</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">10e-4</span><span class="p">,</span> <span class="n">h_x</span><span class="o">=</span><span class="mf">10e-6</span><span class="p">)</span>
 
 <span class="c1"># Run the solver until 10 s</span>
-<span class="n">t_end</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">t_end</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">results_data</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span>
     <span class="n">t_end</span><span class="p">,</span> <span class="n">outputFreq_t</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">outputFreq_x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
@@ -253,8 +249,34 @@
 
 <span class="c1"># %%</span>
 <span class="c1"># Pack the results for future use</span>
-<span class="n">saveResults</span><span class="p">(</span><span class="n">results_data</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_COD&quot;</span><span class="p">)</span>  <span class="c1"># save to .mat file</span>
-<span class="n">loadedResults</span> <span class="o">=</span> <span class="n">loadResults</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_COD&quot;</span><span class="p">)</span>  <span class="c1"># load from .mat file</span>
+<span class="n">saveResults</span><span class="p">(</span><span class="n">results_data</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_COD_h10um_1000us&quot;</span><span class="p">)</span>  <span class="c1"># save to .mat file</span>
+<span class="c1">#loadedResults = loadResults(save_dir, &quot;data_COD_h10um&quot;)  # load from .mat file</span>
+
+
+<span class="c1"># %%</span>
+<span class="n">results5um</span> <span class="o">=</span> <span class="n">loadResults</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_COD_h5um&quot;</span><span class="p">)</span> 
+<span class="n">x5</span><span class="o">=</span><span class="n">results5um</span><span class="p">[</span><span class="s1">&#39;x_data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:]</span>
+<span class="n">Tpeak5</span><span class="o">=</span><span class="n">results5um</span><span class="p">[</span><span class="s1">&#39;T_peak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,)</span>
+
+<span class="n">results10um</span> <span class="o">=</span> <span class="n">loadResults</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_COD_h10um&quot;</span><span class="p">)</span> 
+<span class="n">x10</span><span class="o">=</span><span class="n">results10um</span><span class="p">[</span><span class="s1">&#39;x_data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:]</span>
+<span class="n">Tpeak10</span><span class="o">=</span><span class="n">results10um</span><span class="p">[</span><span class="s1">&#39;T_peak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,)</span>
+
+<span class="n">results20um</span> <span class="o">=</span> <span class="n">loadResults</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_COD_h20um&quot;</span><span class="p">)</span> 
+<span class="n">x20</span><span class="o">=</span><span class="n">results20um</span><span class="p">[</span><span class="s1">&#39;x_data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:]</span>
+<span class="n">Tpeak20</span><span class="o">=</span><span class="n">results20um</span><span class="p">[</span><span class="s1">&#39;T_peak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,)</span>
+
+<span class="n">results10um_1000us</span> <span class="o">=</span> <span class="n">loadResults</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;data_COD_h10um_1000us&quot;</span><span class="p">)</span> 
+<span class="n">x10_1000us</span><span class="o">=</span><span class="n">results10um_1000us</span><span class="p">[</span><span class="s1">&#39;x_data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:]</span>
+<span class="n">Tpeak10_1000us</span><span class="o">=</span><span class="n">results10um_1000us</span><span class="p">[</span><span class="s1">&#39;T_peak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,)</span>
+
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">()</span>
+<span class="c1"># ax.plot(x5,Tpeak5,label=&#39;5um&#39;)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x10</span><span class="p">,</span><span class="n">Tpeak10</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;10um&#39;</span><span class="p">)</span>
+<span class="c1"># ax.plot(x20,Tpeak20,&#39;--&#39;,label=&#39;20um&#39;)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x10_1000us</span><span class="p">,</span><span class="n">Tpeak10_1000us</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;10um_1000us&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

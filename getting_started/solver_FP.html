@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4. FP Solver &mdash; Fenics-based Frontal Polymerization Solver 0.0.1 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>4. FP Solver &mdash; Fenics-based Frontal Polymerization Solver 0.0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=c1dcd045"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -47,9 +50,61 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">2. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage_FPS.html">3. Usage of FPS</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. FP Solver</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-solver_FP">4.1. Main solver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cure-kinetics">4.2. Cure kinetics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-postProcess_FP">4.3. Post process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-solver_FP">4.1. Main solver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solver_FP.FP_solver"><code class="docutils literal notranslate"><span class="pre">FP_solver</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#solver_FP.FP_solver.QUAD_DEG"><code class="docutils literal notranslate"><span class="pre">FP_solver.QUAD_DEG</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solver_FP.FP_solver.__init__"><code class="docutils literal notranslate"><span class="pre">FP_solver.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solver_FP.FP_solver.printParallel"><code class="docutils literal notranslate"><span class="pre">FP_solver.printParallel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solver_FP.FP_solver.setSystemParameters"><code class="docutils literal notranslate"><span class="pre">FP_solver.setSystemParameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solver_FP.FP_solver.local_project"><code class="docutils literal notranslate"><span class="pre">FP_solver.local_project()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solver_FP.FP_solver.setupSolver"><code class="docutils literal notranslate"><span class="pre">FP_solver.setupSolver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solver_FP.FP_solver.solve"><code class="docutils literal notranslate"><span class="pre">FP_solver.solve()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#cure-kinetics">4.2. Cure kinetics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kinetics_library.Kinetics_Model"><code class="docutils literal notranslate"><span class="pre">Kinetics_Model</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kinetics_library.Kinetics_Model.__init__"><code class="docutils literal notranslate"><span class="pre">Kinetics_Model.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kinetics_library.Kinetics_Model.eval"><code class="docutils literal notranslate"><span class="pre">Kinetics_Model.eval()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#kinetics_library.First_Order"><code class="docutils literal notranslate"><span class="pre">First_Order</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kinetics_library.First_Order.__init__"><code class="docutils literal notranslate"><span class="pre">First_Order.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kinetics_library.First_Order.eval"><code class="docutils literal notranslate"><span class="pre">First_Order.eval()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#kinetics_library.Nth_Order"><code class="docutils literal notranslate"><span class="pre">Nth_Order</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kinetics_library.Nth_Order.__init__"><code class="docutils literal notranslate"><span class="pre">Nth_Order.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kinetics_library.Nth_Order.eval"><code class="docutils literal notranslate"><span class="pre">Nth_Order.eval()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#kinetics_library.Prout_Tompkins"><code class="docutils literal notranslate"><span class="pre">Prout_Tompkins</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kinetics_library.Prout_Tompkins.__init__"><code class="docutils literal notranslate"><span class="pre">Prout_Tompkins.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kinetics_library.Prout_Tompkins.eval"><code class="docutils literal notranslate"><span class="pre">Prout_Tompkins.eval()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#kinetics_library.Prout_Tompkins_Diffusion"><code class="docutils literal notranslate"><span class="pre">Prout_Tompkins_Diffusion</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#kinetics_library.Prout_Tompkins_Diffusion.__init__"><code class="docutils literal notranslate"><span class="pre">Prout_Tompkins_Diffusion.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kinetics_library.Prout_Tompkins_Diffusion.eval"><code class="docutils literal notranslate"><span class="pre">Prout_Tompkins_Diffusion.eval()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-postProcess_FP">4.3. Post process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#postProcess_FP.Post_process"><code class="docutils literal notranslate"><span class="pre">Post_process</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#postProcess_FP.Post_process.__init__"><code class="docutils literal notranslate"><span class="pre">Post_process.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#postProcess_FP.Post_process.computeFrontSpeed"><code class="docutils literal notranslate"><span class="pre">Post_process.computeFrontSpeed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#postProcess_FP.Post_process.frontAnimation"><code class="docutils literal notranslate"><span class="pre">Post_process.frontAnimation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#postProcess_FP.Post_process.evoluAtPts"><code class="docutils literal notranslate"><span class="pre">Post_process.evoluAtPts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#postProcess_FP.Post_process.plotT_peak"><code class="docutils literal notranslate"><span class="pre">Post_process.plotT_peak()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#postProcess_FP.Post_process.generateReport"><code class="docutils literal notranslate"><span class="pre">Post_process.generateReport()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#postProcess_FP.saveResults"><code class="docutils literal notranslate"><span class="pre">saveResults()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#postProcess_FP.loadResults"><code class="docutils literal notranslate"><span class="pre">loadResults()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -79,10 +134,10 @@
            <div itemprop="articleBody">
              
   <section id="fp-solver">
-<h1><span class="section-number">4. </span>FP Solver<a class="headerlink" href="#fp-solver" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">4. </span>FP Solver<a class="headerlink" href="#fp-solver" title="Permalink to this heading"></a></h1>
 <p>This section provides details of classes and functions of this FP solver.</p>
 <section id="module-solver_FP">
-<span id="main-solver"></span><h2><span class="section-number">4.1. </span>Main solver<a class="headerlink" href="#module-solver_FP" title="Permalink to this headline"></a></h2>
+<span id="main-solver"></span><h2><span class="section-number">4.1. </span>Main solver<a class="headerlink" href="#module-solver_FP" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="solver_FP.FP_solver">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">solver_FP.</span></span><span class="sig-name descname"><span class="pre">FP_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kinetics_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_trig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_trig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.015</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solver_FP.FP_solver" title="Permalink to this definition"></a></dt>
@@ -98,7 +153,7 @@
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kinetics_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_trig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_trig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.015</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solver_FP.FP_solver.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initializes the FP solvers using the supplied parameters</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>k</strong> (<em>float</em>) – Thermal conductivity of monomer</p></li>
 <li><p><strong>rho</strong> (<em>float</em>) – Density of monomer</p></li>
@@ -111,9 +166,9 @@
 <li><p><strong>alpha0</strong> (<em>float</em>) – Initial degree of cure of system</p></li>
 <li><p><strong>T_trig</strong> (<em>float</em>) – The trigger temperature in deg. C. If no value supplied, uses T_max of adiabatic system</p></li>
 <li><p><strong>t_trig</strong> (<em>float</em>) – Duration of tTrigger</p></li>
-<li><p><strong>L</strong> (<em>float</em><em> (</em><em>default value of 1.5 cm</em><em>)</em>) – Length of domain</p></li>
-<li><p><strong>dt</strong> (<em>float</em><em> (</em><em>default value of 1 ms</em><em>)</em>) – Time step for simulation</p></li>
-<li><p><strong>h_x</strong> (<em>float</em><em> (</em><em>default value of 1e-5 m</em><em>)</em>) – Element size</p></li>
+<li><p><strong>L</strong> (<em>float</em><em> (</em><em>default value</em><em> of </em><em>1.5 cm</em><em>)</em>) – Length of domain</p></li>
+<li><p><strong>dt</strong> (<em>float</em><em> (</em><em>default value</em><em> of </em><em>1 ms</em><em>)</em>) – Time step for simulation</p></li>
+<li><p><strong>h_x</strong> (<em>float</em><em> (</em><em>default value</em><em> of </em><em>1e-5 m</em><em>)</em>) – Element size</p></li>
 </ul>
 </dd>
 </dl>
@@ -130,7 +185,7 @@
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setSystemParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solver_FP.FP_solver.setSystemParameters" title="Permalink to this definition"></a></dt>
 <dd><p>Set system parameters for fenics. Return the options for FFC</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>deg</strong> (<em>int</em>) – Degree of quadrature</p>
 </dd>
 </dl>
@@ -142,7 +197,7 @@
 <dd><p>Perform an element-wise projection of values in expression v
 onto function u on function space V</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>v</strong> (<em>ufl operator</em>) – A ufl algebraic expression referencing the data to be projected</p></li>
 <li><p><strong>V</strong> (<em>dolfin function space</em>) – The function space to which function u belongs</p></li>
@@ -163,20 +218,20 @@ onto function u on function space V</p>
 <span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputFreq_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputFreq_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solver_FP.FP_solver.solve" title="Permalink to this definition"></a></dt>
 <dd><p>Solve the thermo-chemical equations</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>t_end</strong> (<em>float</em>) – The time span of the simulation</p></li>
 <li><p><strong>output_t</strong> (<em>int</em>) – Frequency in time steps at which to save data efault value of 1, ie. save at every time step)</p></li>
 <li><p><strong>output_x</strong> (<em>int</em>) – Spacing between sampling nodal points at which to save data (default value of 1, ie. save every grid point)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>x_data, t_data, T_data, alpha_data -
 Arrays of shape (num_t, num_x), where num_t is the number of sample points in time
 and num_x is the number of sample points in space at which to store data, containing
 the x coordinate, time, temperature and degree of cure, respectively.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Arrays of float</p>
 </dd>
 </dl>
@@ -186,7 +241,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 
 </section>
 <section id="cure-kinetics">
-<h2><span class="section-number">4.2. </span>Cure kinetics<a class="headerlink" href="#cure-kinetics" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">4.2. </span>Cure kinetics<a class="headerlink" href="#cure-kinetics" title="Permalink to this heading"></a></h2>
 <p>The kinetics library defines the cure kinetics model. Some popular models are provided, such as</p>
 <p>the first order,</p>
 <div class="math notranslate nohighlight">
@@ -204,14 +259,14 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <span class="target" id="module-kinetics_library"></span><dl class="py class">
 <dt class="sig sig-object py" id="kinetics_library.Kinetics_Model">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kinetics_library.</span></span><span class="sig-name descname"><span class="pre">Kinetics_Model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">KMexpression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">para</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Kinetics_Model" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
 <p>Base class for cure kinetics models</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="kinetics_library.Kinetics_Model.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">KMexpression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">para</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Kinetics_Model.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initializes the cure kinetics model</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>KMexpression</strong> (<em>string</em>) – Expression of the reaction model in latex, required for generating the report</p></li>
 <li><p><strong>para</strong> (<em>string</em>) – String in html format to put the parameter in the report table, required for generating the report</p></li>
@@ -230,7 +285,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="kinetics_library.First_Order">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kinetics_library.</span></span><span class="sig-name descname"><span class="pre">First_Order</span></span><a class="headerlink" href="#kinetics_library.First_Order" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#kinetics_library.Kinetics_Model" title="kinetics_library.Kinetics_Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">kinetics_library.Kinetics_Model</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#kinetics_library.Kinetics_Model" title="kinetics_library.Kinetics_Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Kinetics_Model</span></code></a></p>
 <p>First order reaction model of the form:</p>
 <div class="math notranslate nohighlight">
 \[\frac{d\alpha}{dt} = A\exp(\frac{-E}{RT})g(\alpha)\]</div>
@@ -247,7 +302,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.First_Order.eval" title="Permalink to this definition"></a></dt>
 <dd><p>Evaluate cure kinetics</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>alpha</strong> (<em>dolfin function</em>) – The function with values of alpha to evalue g(alpha)</p>
 </dd>
 </dl>
@@ -258,7 +313,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="kinetics_library.Nth_Order">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kinetics_library.</span></span><span class="sig-name descname"><span class="pre">Nth_Order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Nth_Order" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#kinetics_library.Kinetics_Model" title="kinetics_library.Kinetics_Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">kinetics_library.Kinetics_Model</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#kinetics_library.Kinetics_Model" title="kinetics_library.Kinetics_Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Kinetics_Model</span></code></a></p>
 <p>nth order reaction model of the form:</p>
 <div class="math notranslate nohighlight">
 \[\frac{d\alpha}{dt} = A\exp(\frac{-E}{RT})g(\alpha)\]</div>
@@ -268,7 +323,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <dt class="sig sig-object py" id="kinetics_library.Nth_Order.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Nth_Order.__init__" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>n</strong> (<em>float</em>) – Order of reaction</p>
 </dd>
 </dl>
@@ -279,7 +334,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Nth_Order.eval" title="Permalink to this definition"></a></dt>
 <dd><p>Evaluate cure kinetics</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>alpha</strong> (<em>dolfin function</em>) – The function with values of alpha to evalue g(alpha)</p>
 </dd>
 </dl>
@@ -290,7 +345,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="kinetics_library.Prout_Tompkins">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kinetics_library.</span></span><span class="sig-name descname"><span class="pre">Prout_Tompkins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Prout_Tompkins" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#kinetics_library.Kinetics_Model" title="kinetics_library.Kinetics_Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">kinetics_library.Kinetics_Model</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#kinetics_library.Kinetics_Model" title="kinetics_library.Kinetics_Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Kinetics_Model</span></code></a></p>
 <p>Prout Tompkins reaction model of the form:</p>
 <div class="math notranslate nohighlight">
 \[\frac{d\alpha}{dt} = A\exp(\frac{-E}{RT})g(\alpha)\]</div>
@@ -300,7 +355,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <dt class="sig sig-object py" id="kinetics_library.Prout_Tompkins.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Prout_Tompkins.__init__" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>float</em>) – Order of reaction</p></li>
 <li><p><strong>m</strong> (<em>float</em>) – Order of reaction</p></li>
@@ -314,7 +369,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Prout_Tompkins.eval" title="Permalink to this definition"></a></dt>
 <dd><p>Evaluate cure kinetics</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>alpha</strong> (<em>dolfin function</em>) – The function with values of alpha to evalue g(alpha)</p>
 </dd>
 </dl>
@@ -325,7 +380,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="kinetics_library.Prout_Tompkins_Diffusion">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kinetics_library.</span></span><span class="sig-name descname"><span class="pre">Prout_Tompkins_Diffusion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ca</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Prout_Tompkins_Diffusion" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#kinetics_library.Kinetics_Model" title="kinetics_library.Kinetics_Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">kinetics_library.Kinetics_Model</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#kinetics_library.Kinetics_Model" title="kinetics_library.Kinetics_Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Kinetics_Model</span></code></a></p>
 <p>Prout Tompkins with diffusion term reaction model of the form:</p>
 <div class="math notranslate nohighlight">
 \[\frac{d\alpha}{dt} = A\exp(\frac{-E}{RT})g(\alpha)\]</div>
@@ -335,7 +390,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <dt class="sig sig-object py" id="kinetics_library.Prout_Tompkins_Diffusion.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ca</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Prout_Tompkins_Diffusion.__init__" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>float</em>) – Order of reaction</p></li>
 <li><p><strong>m</strong> (<em>float</em>) – Order of reaction</p></li>
@@ -351,7 +406,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 <span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kinetics_library.Prout_Tompkins_Diffusion.eval" title="Permalink to this definition"></a></dt>
 <dd><p>Evaluate cure kinetics</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>alpha</strong> (<em>dolfin function</em>) – The function with values of alpha to evalue g(alpha)</p>
 </dd>
 </dl>
@@ -361,7 +416,7 @@ the x coordinate, time, temperature and degree of cure, respectively.</p>
 
 </section>
 <section id="module-postProcess_FP">
-<span id="post-process"></span><h2><span class="section-number">4.3. </span>Post process<a class="headerlink" href="#module-postProcess_FP" title="Permalink to this headline"></a></h2>
+<span id="post-process"></span><h2><span class="section-number">4.3. </span>Post process<a class="headerlink" href="#module-postProcess_FP" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="postProcess_FP.Post_process">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">postProcess_FP.</span></span><span class="sig-name descname"><span class="pre">Post_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpSolver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pltTpeak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'example'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anim_frames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#postProcess_FP.Post_process" title="Permalink to this definition"></a></dt>
@@ -372,6 +427,8 @@ computing frontal speed, and generating the animation of evolution of alpha and 
 <dt class="sig sig-object py" id="postProcess_FP.Post_process.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpSolver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pltTpeak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'example'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anim_frames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#postProcess_FP.Post_process.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initializes the Post process using the supplied parameters</p>
+<section id="parameter">
+<h3><span class="section-number">4. </span>Parameter<a class="headerlink" href="#parameter" title="Permalink to this heading"></a></h3>
 <dl class="simple">
 <dt>results_data - dictionary</dt><dd><p>results returned by FP_solver.solve(), including  x_data, t_data, T_data, alpha_data, T_peak</p>
 </dd>
@@ -391,6 +448,7 @@ Default is “example”</p>
 <dt>fid - int</dt><dd><p>The id for plot</p>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 <dl class="py method">
@@ -399,7 +457,7 @@ Default is “example”</p>
 <dd><p>Computes the front speed by tracking the location where alpha = 0.5 during the simulation.
 Returns the front speed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><ul class="simple">
 <li><p><em>Vfem - float</em> – The front speed computed from the slope of a linear fit through the front position vs time curve</p></li>
 <li><p><em>rptStr - string</em> – A string in html format for generating the report.</p></li>
@@ -420,10 +478,10 @@ Returns the front speed.</p>
 <span class="sig-name descname"><span class="pre">evoluAtPts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postProcess_FP.Post_process.evoluAtPts" title="Permalink to this definition"></a></dt>
 <dd><p>Plot the evolution of alpha and T at given points.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A string in html format for generating the report.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>string</p>
 </dd>
 </dl>
@@ -434,10 +492,10 @@ Returns the front speed.</p>
 <span class="sig-name descname"><span class="pre">plotT_peak</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postProcess_FP.Post_process.plotT_peak" title="Permalink to this definition"></a></dt>
 <dd><p>Plot the evolution of alpha and T at given points.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A string in html format for generating the report.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>string</p>
 </dd>
 </dl>
@@ -461,7 +519,7 @@ Returns the front speed.</p>
 <span class="sig-prename descclassname"><span class="pre">postProcess_FP.</span></span><span class="sig-name descname"><span class="pre">saveResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mat_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#postProcess_FP.saveResults" title="Permalink to this definition"></a></dt>
 <dd><p>Saves the supplied dictionary save_data to a matlab data file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>save_data</strong> (<em>dictionary</em>) – Results data to be saved</p></li>
 <li><p><strong>save_dir</strong> (<em>string</em>) – path to save results</p></li>
@@ -476,10 +534,10 @@ Returns the front speed.</p>
 <span class="sig-prename descclassname"><span class="pre">postProcess_FP.</span></span><span class="sig-name descname"><span class="pre">loadResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mat_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#postProcess_FP.loadResults" title="Permalink to this definition"></a></dt>
 <dd><p>Unpacks the supplied .mat file into a dictionary and returns</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dictionary with variable names as ‘x_data’, ‘t_data’, ‘alpha_data’, ‘T_data’, ‘T_peak’, are loaded as</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>dictionary</p>
 </dd>
 </dl>

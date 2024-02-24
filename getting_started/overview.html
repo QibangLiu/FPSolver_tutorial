@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1. Overview &mdash; Fenics-based Frontal Polymerization Solver 0.0.1 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>1. Overview &mdash; Fenics-based Frontal Polymerization Solver 0.0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=c1dcd045"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -75,8 +78,8 @@
            <div itemprop="articleBody">
              
   <section id="overview">
-<h1><span class="section-number">1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h1>
-<p class="linemarker linemarker-4">The propagation of a polymerization front can be described by a thermo-chemical model based on two coupled reaction-diffusion partial differential equations (PDEs) expressed in terms of the temperature <span class="math notranslate nohighlight">\(T\)</span> and degree of cure <span class="math notranslate nohighlight">\(\alpha\)</span> as follows,</p>
+<h1><span class="section-number">1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h1>
+<p>The propagation of a polymerization front can be described by a thermo-chemical model based on two coupled reaction-diffusion partial differential equations (PDEs) expressed in terms of the temperature <span class="math notranslate nohighlight">\(T\)</span> and degree of cure <span class="math notranslate nohighlight">\(\alpha\)</span> as follows,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation}
 \left\{\begin{array}{l}
@@ -84,8 +87,8 @@
 \frac{\partial \alpha}{\partial t}= A \exp \left(-\frac{E}{R T}\right) g(\alpha),
 \end{array}\right.
 \end{equation}\end{split}\]</div>
-<p class="linemarker linemarker-15">where the first equation describes heat diffusion, and the second equation describes the cure kinetics of the FP reaction.</p>
-<p class="linemarker linemarker-17">This Frontal Polymerization Solver (FPS, 1D) is developed based on <a class="reference external" href="https://fenicsproject.org/">FENICS</a>, a popular open-source computing platform for solving PDEs.</p>
+<p>where the first equation describes heat diffusion, and the second equation describes the cure kinetics of the FP reaction.</p>
+<p>This Frontal Polymerization Solver (FPS, 1D) is developed based on <a class="reference external" href="https://fenicsproject.org/">FENICS</a>, a popular open-source computing platform for solving PDEs.</p>
 </section>
 
 

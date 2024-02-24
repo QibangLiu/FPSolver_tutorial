@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2. Installation &mdash; Fenics-based Frontal Polymerization Solver 0.0.1 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>2. Installation &mdash; Fenics-based Frontal Polymerization Solver 0.0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=c1dcd045"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -82,110 +85,110 @@
            <div itemprop="articleBody">
              
   <section id="installation">
-<h1><span class="section-number">2. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
-<p class="linemarker linemarker-4">This solver is developed based on FENICS, which is run on a Linux-based platform. It can, however, also be run on Windows systems.</p>
+<h1><span class="section-number">2. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+<p>This solver is developed based on FENICS, which is run on a Linux-based platform. It can, however, also be run on Windows systems.</p>
 <section id="installing-wsl-for-windows-users">
-<h2><span class="section-number">2.1. </span>Installing WSL for Windows users<a class="headerlink" href="#installing-wsl-for-windows-users" title="Permalink to this headline"></a></h2>
-<p class="linemarker linemarker-8">This section is for Windows users only. For Linux or Mac OS users, please skip this section.</p>
-<p class="linemarker linemarker-10">For Windows users, <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a> (Windows Subsystem for Linux) will be needed.</p>
-<p class="linemarker linemarker-12">To install WSL, open PowerShell or Windows Command Prompt in administrator mode by searching in the Start menu, right-clicking it, and selecting “Run as administrator.” Enter the command:</p>
+<h2><span class="section-number">2.1. </span>Installing WSL for Windows users<a class="headerlink" href="#installing-wsl-for-windows-users" title="Permalink to this heading"></a></h2>
+<p>This section is for Windows users only. For Linux or Mac OS users, please skip this section.</p>
+<p>For Windows users, <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a> (Windows Subsystem for Linux) will be needed.</p>
+<p>To install WSL, open PowerShell or Windows Command Prompt in administrator mode by searching in the Start menu, right-clicking it, and selecting “Run as administrator.” Enter the command:</p>
 <div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="n">wsl</span> <span class="p">-</span><span class="n">-install</span>
 </pre></div>
 </div>
-<p class="linemarker linemarker-18">and then restart your machine. For more details on WSL’s installation, please refer to <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">https://learn.microsoft.com/en-us/windows/wsl/install</a>.</p>
-<p class="linemarker linemarker-20">After installing WSL, open a Linux terminal shell by going to the Start menu and running ‘Ubuntu’, from which a Unix account name and password should be set first (The password can be empty).</p>
-<p class="linemarker linemarker-22">Then please follow the below sections to install FENICS.</p>
+<p>and then restart your machine. For more details on WSL’s installation, please refer to <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">https://learn.microsoft.com/en-us/windows/wsl/install</a>.</p>
+<p>After installing WSL, open a Linux terminal shell by going to the Start menu and running ‘Ubuntu’, from which a Unix account name and password should be set first (The password can be empty).</p>
+<p>Then please follow the below sections to install FENICS.</p>
 </section>
 <section id="install-conda">
-<h2><span class="section-number">2.2. </span>Install conda<a class="headerlink" href="#install-conda" title="Permalink to this headline"></a></h2>
-<p class="linemarker linemarker-28">We recommend using conda to install fenics.</p>
-<p class="linemarker linemarker-30">Check whether conda is already installed on your machine. Open a terminal shell and input:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which conda
+<h2><span class="section-number">2.2. </span>Install conda<a class="headerlink" href="#install-conda" title="Permalink to this heading"></a></h2>
+<p>We recommend using conda to install fenics.</p>
+<p>Check whether conda is already installed on your machine. Open a terminal shell and input:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>conda
 </pre></div>
 </div>
-<p class="linemarker linemarker-36">This command will display the path where conda is installed. If conda is not found, install it using Mambaforge3:</p>
+<p>This command will display the path where conda is installed. If conda is not found, install it using Mambaforge3:</p>
 <ul class="simple">
-<li><p class="linemarker linemarker-38">Linux Users:</p></li>
+<li><p>Linux Users:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh
-bash Mambaforge-Linux-x86_64.sh -b -p ~/mambaforge3
-</pre></div>
-</div>
-<ul class="simple">
-<li><p class="linemarker linemarker-45">Macintosh Users with Intel processors:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-MacOSX-x86_64.sh
-bash Mambaforge-MacOSX-x86_64.sh -b -p ~/mambaforge3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh
+bash<span class="w"> </span>Mambaforge-Linux-x86_64.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span>~/mambaforge3
 </pre></div>
 </div>
 <ul class="simple">
-<li><p class="linemarker linemarker-52">Macintosh Users with Apple Silicon processors:</p></li>
+<li><p>Macintosh Users with Intel processors:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-MacOSX-arm64.sh
-bash Mambaforge-MacOSX-arm64.sh -b -p ~/mambaforge3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-MacOSX-x86_64.sh
+bash<span class="w"> </span>Mambaforge-MacOSX-x86_64.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span>~/mambaforge3
 </pre></div>
 </div>
-<p class="linemarker linemarker-59">With Mambaforge installed in your home directory, export PATH so that it may be used:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/mambaforge3/bin:<span class="nv">$PATH</span>
+<ul class="simple">
+<li><p>Macintosh Users with Apple Silicon processors:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-MacOSX-arm64.sh
+bash<span class="w"> </span>Mambaforge-MacOSX-arm64.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span>~/mambaforge3
 </pre></div>
 </div>
-<p class="linemarker linemarker-65">Now that we can execute mamba, initialize it and then exit the terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba init
+<p>With Mambaforge installed in your home directory, export PATH so that it may be used:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/mambaforge3/bin:<span class="nv">$PATH</span>
+</pre></div>
+</div>
+<p>Now that we can execute mamba, initialize it and then exit the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>init
 <span class="nb">exit</span>
 </pre></div>
 </div>
-<p class="linemarker linemarker-72">and then restart a terminal and check if conda is installed to use or not:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which conda
+<p>and then restart a terminal and check if conda is installed to use or not:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>conda
 </pre></div>
 </div>
 </section>
 <section id="install-fenics">
-<h2><span class="section-number">2.3. </span>Install Fenics<a class="headerlink" href="#install-fenics" title="Permalink to this headline"></a></h2>
-<p class="linemarker linemarker-81">Create a virtual environment for FENICS and activate it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create --name fenics -q -y
-conda activate fenics
+<h2><span class="section-number">2.3. </span>Install Fenics<a class="headerlink" href="#install-fenics" title="Permalink to this heading"></a></h2>
+<p>Create a virtual environment for FENICS and activate it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>fenics<span class="w"> </span>-q<span class="w"> </span>-y
+conda<span class="w"> </span>activate<span class="w"> </span>fenics
 </pre></div>
 </div>
-<p class="linemarker linemarker-88">List all of the versions of fenics available on your platform with conda:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda search fenics --channel conda-forge
+<p>List all of the versions of fenics available on your platform with conda:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>search<span class="w"> </span>fenics<span class="w"> </span>--channel<span class="w"> </span>conda-forge
 </pre></div>
 </div>
-<p class="linemarker linemarker-94">Install FENICS. In 2018, work started on FEniCSx: the new version of the FEniCS library. However, our FP solver is developed in the old version of FEniCS, whose installation uses the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge fenics <span class="nv">mshr</span><span class="o">=</span><span class="m">2019</span>.1.0<span class="o">=</span>py38h255090a_2 fenics-dijitso fenics-dolfin fenics-ffc fenics-fiat fenics-libdolfin fenics-ufl
+<p>Install FENICS. In 2018, work started on FEniCSx: the new version of the FEniCS library. However, our FP solver is developed in the old version of FEniCS, whose installation uses the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>fenics<span class="w"> </span><span class="nv">mshr</span><span class="o">=</span><span class="m">2019</span>.1.0<span class="o">=</span>py38h255090a_2<span class="w"> </span>fenics-dijitso<span class="w"> </span>fenics-dolfin<span class="w"> </span>fenics-ffc<span class="w"> </span>fenics-fiat<span class="w"> </span>fenics-libdolfin<span class="w"> </span>fenics-ufl
 </pre></div>
 </div>
 </section>
 <section id="install-other-dependencies">
-<h2><span class="section-number">2.4. </span>Install other dependencies<a class="headerlink" href="#install-other-dependencies" title="Permalink to this headline"></a></h2>
-<p class="linemarker linemarker-103">Activate the fenics virtual environment:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate fenics
+<h2><span class="section-number">2.4. </span>Install other dependencies<a class="headerlink" href="#install-other-dependencies" title="Permalink to this heading"></a></h2>
+<p>Activate the fenics virtual environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>fenics
 </pre></div>
 </div>
-<p class="linemarker linemarker-109">Check whether ffmpeg is installed (used for post-processing):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which ffmpeg
+<p>Check whether ffmpeg is installed (used for post-processing):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>ffmpeg
 </pre></div>
 </div>
-<p class="linemarker linemarker-115">If ffmpeg is not installed, install it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install ffmpeg
+<p>If ffmpeg is not installed, install it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>ffmpeg
 </pre></div>
 </div>
-<p class="linemarker linemarker-122">Install the other python modules:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install matplotlib scipy IPython
+<p>Install the other python modules:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>matplotlib<span class="w"> </span>scipy<span class="w"> </span>IPython
 </pre></div>
 </div>
 </section>
 <section id="using-fenics">
-<h2><span class="section-number">2.5. </span>Using Fenics<a class="headerlink" href="#using-fenics" title="Permalink to this headline"></a></h2>
-<p class="linemarker linemarker-131">Each time we use fenics, activation of the fenics virtual environment is needed:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate fenics
+<h2><span class="section-number">2.5. </span>Using Fenics<a class="headerlink" href="#using-fenics" title="Permalink to this heading"></a></h2>
+<p>Each time we use fenics, activation of the fenics virtual environment is needed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>fenics
 </pre></div>
 </div>
 </section>
 <section id="uninstall-the-fenics-environment">
-<h2><span class="section-number">2.6. </span>Uninstall the fenics environment<a class="headerlink" href="#uninstall-the-fenics-environment" title="Permalink to this headline"></a></h2>
-<p class="linemarker linemarker-141">If you do not use fenics anymore, you may uninstall it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda deactivate   <span class="c1"># if &#39;fenics&#39; was currently activated</span>
-conda remove --name fenics --all
+<h2><span class="section-number">2.6. </span>Uninstall the fenics environment<a class="headerlink" href="#uninstall-the-fenics-environment" title="Permalink to this heading"></a></h2>
+<p>If you do not use fenics anymore, you may uninstall it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>deactivate<span class="w">   </span><span class="c1"># if &#39;fenics&#39; was currently activated</span>
+conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>fenics<span class="w"> </span>--all
 </pre></div>
 </div>
 </section>

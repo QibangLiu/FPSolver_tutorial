@@ -41,6 +41,12 @@ We have included two example scripts that demonstrate the capabilities of this c
 
     python example_DCPD.py  # run the DCPD example 
 
+If very fine mesh is used, you may paralell run the simulation for saving computational time:
+
+.. code:: bash
+
+    mpirun -n 4 python example_DCPD.py  # run the DCPD example with 4 CPUs
+
 After the simulation is completed, one simulation report file  './out_DCPD/Report_DCPD.html' (`example report  <../_static/Report_DCPD.html>`_) is automatically generated and can be opened in a browser.
 
 .. _example_DCPD.py:
